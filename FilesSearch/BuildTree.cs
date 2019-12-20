@@ -28,7 +28,7 @@ namespace FilesSearch
             if (parent == null)
                 this.Invoke(new InvokeDelegate(() => tviewSFiles.Nodes.Add(child)));
             else
-                this.BeginInvoke(new InvokeDelegate(() => parent.Nodes.Add(child)));            
+                this.Invoke(new InvokeDelegate(() => parent.Nodes.Add(child)));            
         }   
 
         /// <summary>
