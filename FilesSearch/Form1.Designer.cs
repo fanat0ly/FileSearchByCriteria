@@ -334,6 +334,7 @@
             this.MinimumSize = new System.Drawing.Size(523, 477);
             this.Name = "mainForm";
             this.Text = "Поиск файлов";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
