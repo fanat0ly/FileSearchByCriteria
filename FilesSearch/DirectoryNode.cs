@@ -14,10 +14,12 @@ namespace FilesSearch
         public string FullName { get; set; }
         // кол-во файлов в данной папке
         public int FilesCount { get; set; }
+        // кол-во файлов в данной папке, соответствующих критериям поиска
+        public int MatchedFilesCount { get; set; }
         // кол-во подпапок в данной папке 
         public int DirsCount { get; set; }
         // папка пуста?
-        public bool IsEmpty { get => (DirsCount + FilesCount) == 0; }
+        public bool IsEmpty { get => (DirsCount + MatchedFilesCount) == 0; }
         // родительская папка
         public new DirectoryNode Parent { get; private set; }
         // корневая папка (у нее нет родителя)

@@ -100,6 +100,7 @@ namespace FilesSearch
                                 return;
                             }
 
+                            currentNode.FilesCount++;
                             UpdateProcessingInfo(file, ++cntProcessed, cntSearched);
 
                             // читаем содержимое файла
@@ -114,12 +115,12 @@ namespace FilesSearch
                                     // если файл содержит заданное слово/фразу
                                     if (line.IndexOf(filePattern, StringComparison.InvariantCultureIgnoreCase) != -1)
                                     {
-                                        currentNode.FilesCount++;
+                                        currentNode.MatchedFilesCount++;
                                         ++cntSearched;
 
                                         // добавляем папку в дерево, если в ней найден хотя бы один файл,
                                         // удовлетворяющий критерию поиска
-                                        if (currentNode.FilesCount == 1)
+                                        if (currentNode.MatchedFilesCount == 1)
                                         {
                                             var node = currentNode;
                                             while (node != null && !node.IsAddedToTree)
